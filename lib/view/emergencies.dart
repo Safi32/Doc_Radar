@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Emergencies extends StatelessWidget {
-  const Emergencies({super.key});
+  const Emergencies({key});
 
   @override
   Widget build(BuildContext context) {

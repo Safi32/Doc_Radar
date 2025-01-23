@@ -182,7 +182,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CreateAccount extends StatefulWidget {
-  const CreateAccount({super.key});
+  const CreateAccount({key});
 
   @override
   _CreateAccountState createState() => _CreateAccountState();

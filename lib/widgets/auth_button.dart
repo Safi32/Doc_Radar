@@ -2,7 +2,7 @@ import 'package:doc_radar/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton({super.key, required this.title, required this.onPressed});
+  const AuthButton({key, required this.title, required this.onPressed});
 
   final String title;
   final VoidCallback onPressed;

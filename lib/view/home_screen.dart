@@ -3,7 +3,7 @@ import 'package:doc_radar/view/near_by_doctors.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({key});
 
   @override
   Widget build(BuildContext context) {

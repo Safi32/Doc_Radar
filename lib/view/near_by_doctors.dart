@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NearByDoctors extends StatelessWidget {
-  const NearByDoctors({super.key});
+  const NearByDoctors({key});
 
   @override
   Widget build(BuildContext context) {

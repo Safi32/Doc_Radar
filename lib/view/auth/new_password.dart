@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NewPassword extends StatelessWidget {
-  const NewPassword({super.key});
+  const NewPassword({key});
 
   @override
   Widget build(BuildContext context) {

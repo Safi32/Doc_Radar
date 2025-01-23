@@ -3,7 +3,7 @@ import 'package:doc_radar/widgets/auth_button.dart';
 import 'package:flutter/material.dart';
 
 class EnterLocation extends StatelessWidget {
-  const EnterLocation({super.key});
+  const EnterLocation({key});
 
   @override
   Widget build(BuildContext context) {
