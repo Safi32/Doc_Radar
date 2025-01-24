@@ -173,17 +173,17 @@
 //     );
 //   }
 // }
+
 import 'package:doc_radar/utils/colors.dart';
-import 'package:doc_radar/view/auth/sign_in.dart';
-import 'package:doc_radar/widgets/Text_form_field.dart';
-import 'package:doc_radar/widgets/auth_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CreateAccount extends StatefulWidget {
-  const CreateAccount({key});
+import '../../../view/auth/sign_in.dart';
+import '../../../widgets/Text_form_field.dart';
+import '../../../widgets/auth_button.dart';
 
+class CreateAccount extends StatefulWidget {
   @override
   _CreateAccountState createState() => _CreateAccountState();
 }
@@ -272,24 +272,28 @@ class _CreateAccountState extends State<CreateAccount> {
                                 const TextSpan(
                                   text: "I agree to the healthcare ",
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
+                                    color: Colors.black,
+                                  ),
                                 ),
                                 TextSpan(
                                   text: "Terms of Service",
                                   style: const TextStyle(
-                                      color: Colors.blue, fontSize: 12),
+                                    color: Colors.blue,
+                                  ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {},
                                 ),
                                 const TextSpan(
                                   text: " and \n",
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
+                                    color: Colors.black,
+                                  ),
                                 ),
                                 TextSpan(
                                   text: "Privacy Policy",
                                   style: const TextStyle(
-                                      color: Colors.blue, fontSize: 12),
+                                    color: Colors.blue,
+                                  ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {},
                                 ),

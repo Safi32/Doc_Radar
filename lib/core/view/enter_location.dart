@@ -1,12 +1,9 @@
-import 'package:doc_radar/utils/colors.dart';
-import 'package:doc_radar/view/dashboard_screen.dart';
-import 'package:doc_radar/widgets/auth_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import '../../utils/colors.dart';
+import '../../widgets/auth_button.dart';
 
 class EnterLocation extends StatelessWidget {
-  const EnterLocation({key});
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -152,7 +149,7 @@ class EnterLocation extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                       horizontal: 40,
                     ),
-                    child: const Row(
+                    child: Row(
                       children: [
                         Text(
                           "8502 Preston Rd, Ingl...",
@@ -167,9 +164,7 @@ class EnterLocation extends StatelessWidget {
               ),
               AuthButton(
                 title: "Confirm Location",
-                onPressed: () {
-                  // Get.to(() => DashboardScreen());
-                },
+                onPressed: () {},
               ),
             ],
           ),

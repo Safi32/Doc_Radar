@@ -1,17 +1,15 @@
-import 'package:doc_radar/utils/colors.dart';
-import 'package:doc_radar/view/auth/create_account.dart';
-import 'package:doc_radar/view/auth/forgot_password.dart';
-import 'package:doc_radar/widgets/Text_form_field.dart';
-import 'package:doc_radar/widgets/auth_button.dart';
-import 'package:doc_radar/widgets/socail_logins.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/view/dashbord/dashboard.dart';
+import '../../../utils/colors.dart';
+import '../../../view/auth/create_account.dart';
+import '../../../view/auth/forgot_password.dart';
+import '../../../widgets/Text_form_field.dart';
+import '../../../widgets/auth_button.dart';
+import '../../../widgets/socail_logins.dart';
+import '../dashbord/dashboard.dart';
 
 class SignIn extends StatelessWidget {
-  const SignIn({key});
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,11 +28,11 @@ class SignIn extends StatelessWidget {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back_ios_new_sharp,
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                       child: Center(
                         child: Text(
                           "Sign In",
@@ -105,7 +103,7 @@ class SignIn extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => const CreateAccount());
+                    Get.to(() => CreateAccount());
                   },
                   child: RichText(
                     text: const TextSpan(

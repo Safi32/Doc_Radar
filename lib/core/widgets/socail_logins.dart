@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SocailLogins extends StatelessWidget {
-  const SocailLogins({key, required this.imageUrl, required this.title});
+  const SocailLogins({required this.imageUrl, required this.title});
 
   final String imageUrl;
   final String title;
@@ -25,9 +25,9 @@ class SocailLogins extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 20,
             ),
           ),
         ],

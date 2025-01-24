@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HelpCenter extends StatefulWidget {
-  const HelpCenter({key});
-
   @override
   State<HelpCenter> createState() => _HelpCenterState();
 }
@@ -16,7 +15,6 @@ class _HelpCenterState extends State<HelpCenter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Row(
@@ -31,7 +29,7 @@ class _HelpCenterState extends State<HelpCenter> {
               ),
             ),
             SizedBox(
-              width: 110,
+              width: 110.w,
             ),
             Text(
               'Help Center',
@@ -78,7 +76,7 @@ class _HelpCenterState extends State<HelpCenter> {
                         Text(
                           'FAQ',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
                           ),
@@ -106,7 +104,7 @@ class _HelpCenterState extends State<HelpCenter> {
                         Text(
                           'Contact Us',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
                           ),
@@ -125,12 +123,8 @@ class _HelpCenterState extends State<HelpCenter> {
                   ),
                 ],
               ),
-              // SizedBox(height: 10),
-              Divider(
-                color: Colors.grey,
-                thickness: 1,
-                height: 0,
-              ),
+              SizedBox(height: 10),
+              Divider(color: Colors.grey, thickness: 1),
               if (selectedIndex == 0) buildFAQTab(),
               if (selectedIndex == 1) buildContactUsContent(),
             ],
@@ -144,17 +138,14 @@ class _HelpCenterState extends State<HelpCenter> {
     return Column(
       children: [
         SizedBox(
-          height: 12,
-        ),
-        SizedBox(
           height: 40,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              buildCategoryChip('All', 0),
-              buildCategoryChip('Services', 1),
-              buildCategoryChip('General', 2),
-              buildCategoryChip('Account', 3),
+              buildCategoryChip('All', true),
+              buildCategoryChip('Services', false),
+              buildCategoryChip('General', false),
+              buildCategoryChip('Account', false),
             ],
           ),
         ),
@@ -175,7 +166,7 @@ class _HelpCenterState extends State<HelpCenter> {
                   getQuestionTitle(index),
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 14,
+                    fontSize: 14.sp,
                   ),
                 ),
                 children: [
@@ -186,7 +177,7 @@ class _HelpCenterState extends State<HelpCenter> {
                     ),
                     child: Text(
                       getAnswerContent(index),
-                      style: TextStyle(fontSize: 13),
+                      style: TextStyle(fontSize: 13.sp),
                     ),
                   ),
                 ],
@@ -205,7 +196,7 @@ class _HelpCenterState extends State<HelpCenter> {
           height: 20,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -216,7 +207,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: Icon(
                 Icons.headphones,
                 size: 25,
-                color: Color(0xff1D3D78),
+                color: Colors.black.withOpacity(0.7),
               ),
               title: Text(
                 'Customer Service',
@@ -225,13 +216,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -242,7 +233,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: FaIcon(
                 FontAwesomeIcons.instagram,
                 size: 25,
-                color: Color(0xffDB2BB7),
+                color: Colors.black,
               ),
               title: Text(
                 'Instagram',
@@ -251,13 +242,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -268,7 +259,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: FaIcon(
                 FontAwesomeIcons.whatsapp,
                 size: 25,
-                color: Colors.green.withOpacity(0.75),
+                color: Colors.black,
               ),
               title: Text(
                 'WhatsApp',
@@ -277,13 +268,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -294,7 +285,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: FaIcon(
                 FontAwesomeIcons.intercom,
                 size: 25,
-                color: Color(0xff7CA3EC),
+                color: Colors.black,
               ),
               title: Text(
                 'Website',
@@ -303,13 +294,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -320,7 +311,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: FaIcon(
                 FontAwesomeIcons.facebook,
                 size: 25,
-                color: Color(0xff2F5DB4),
+                color: Colors.black,
               ),
               title: Text(
                 'Facebook',
@@ -329,13 +320,13 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
         ),
         Container(
-            width: 400,
+            width: 400.h,
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.8),
@@ -346,7 +337,7 @@ class _HelpCenterState extends State<HelpCenter> {
               leading: FaIcon(
                 FontAwesomeIcons.twitter,
                 size: 25,
-                color: Color(0xff2F5DB4).withOpacity(0.75),
+                color: Colors.black,
               ),
               title: Text(
                 'Twitter',
@@ -355,7 +346,7 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.keyboard_arrow_down),
+              trailing: Icon(Icons.arrow_circle_down_sharp),
             )),
         SizedBox(
           height: 5,
@@ -364,36 +355,14 @@ class _HelpCenterState extends State<HelpCenter> {
     );
   }
 
-  int selectedChipIndex = 0;
-
-  Widget buildCategoryChip(String label, int index) {
-    bool isSelected = selectedChipIndex == index;
-
+  Widget buildCategoryChip(String label, bool isSelected) {
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            selectedChipIndex = index; // Update the selected chip index
-          });
-        },
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          decoration: BoxDecoration(
-            color: isSelected ? Color(0xff1D3D78) : Colors.white,
-            borderRadius: BorderRadius.circular(20.0), // Circular border
-            border: Border.all(
-              color: isSelected ? Color(0xff1D3D78) : Colors.grey,
-            ),
-          ),
-          child: Text(
-            label,
-            style: TextStyle(
-              color: isSelected ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
+      child: ChoiceChip(
+        label: Text(label),
+        selected: isSelected,
+        selectedColor: Colors.blue,
+        onSelected: (bool selected) {},
       ),
     );
   }
