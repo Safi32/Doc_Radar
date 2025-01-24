@@ -16,87 +16,85 @@ class Emergencies extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             vertical: 50,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Image.asset(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Image.asset(
                   "assets/emergencies.png",
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Center(
-                child: RichText(
+                const SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Be Prepared for\n",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Emergencies\n",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.red,
+                            fontSize: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Text(
+                  "Quick access to emergency \n services when you need it \n most",
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Be Prepared for\n",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                        ),
-                      ),
-                      TextSpan(
-                        text: "Emergencies\n",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.red,
-                          fontSize: 30,
-                        ),
-                      ),
-                    ],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey.shade600,
                   ),
                 ),
-              ),
-              Text(
-                "Quick access to emergency \n services when you need it \n most",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => const NearByDoctors());
-                    },
-                    child: const Image(
-                      image: AssetImage(
-                        "assets/left.png",
-                      ),
-                    ),
-                  ),
-                  const Expanded(
-                    child: Center(
-                      child: Image(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const NearByDoctors());
+                      },
+                      child: const Image(
                         image: AssetImage(
-                          "assets/pagedots.png",
+                          "assets/left.png",
                         ),
                       ),
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => const SignOption());
-                    },
-                    child: const Image(
-                      image: AssetImage(
-                        "assets/right.png",
+                    const Expanded(
+                      child: Center(
+                        child: Image(
+                          image: AssetImage(
+                            "assets/pagedots.png",
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              )
-            ],
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const SignOption());
+                      },
+                      child: const Image(
+                        image: AssetImage(
+                          "assets/right.png",
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

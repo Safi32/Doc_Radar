@@ -1,6 +1,7 @@
 import 'package:doc_radar/utils/colors.dart';
 import 'package:doc_radar/view/auth/create_account.dart';
 import 'package:doc_radar/view/auth/forgot_password.dart';
+import 'package:doc_radar/view/locate_near_by_doctors.dart';
 import 'package:doc_radar/widgets/Text_form_field.dart';
 import 'package:doc_radar/widgets/auth_button.dart';
 import 'package:doc_radar/widgets/socail_logins.dart';
@@ -95,7 +96,7 @@ class SignIn extends StatelessWidget {
                 AuthButton(
                   title: "Sign In",
                   onPressed: () {
-                    // Get.to(() => const CustomDashboard());
+                    Get.to(() => const LocateNearByDoctors());
                   },
                 ),
                 const SizedBox(
