@@ -2,11 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../view/category.dart';
+import '../../../view/locate_near_by_doctors.dart';
 import '../../constant/util.dart';
 import '../../custom_widget/browse_custom_contanor.dart';
 import '../../custom_widget/hospital_custom_card.dart';
+import '../nearbyhospitalscreen.dart';
 
 class HomeScreenss extends StatelessWidget {
   @override
@@ -152,19 +156,24 @@ class HomeScreenss extends StatelessWidget {
                               SizedBox(
                                 height: 10,
                               ),
-                              Container(
-                                alignment: Alignment.center,
-                                width: 150,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Text(
-                                  'Locate nearby doctors',
-                                  style: TextStyle(
-                                    fontFamily: 'segoe',
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w600,
+                              InkWell(
+                                onTap: () {
+                                  Get.to(() => LocateNearByDoctors());
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: 150,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Text(
+                                    'Locate nearby doctors',
+                                    style: TextStyle(
+                                      fontFamily: 'segoe',
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -219,15 +228,20 @@ class HomeScreenss extends StatelessWidget {
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black))),
-                      Text(
-                        'See All',
-                        style: GoogleFonts.inter(
-                            textStyle: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff4F89F4)),
-                            decoration: TextDecoration.underline,
-                            decorationColor: Color(0xff4F89F4)),
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => Category());
+                        },
+                        child: Text(
+                          'See All',
+                          style: GoogleFonts.inter(
+                              textStyle: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff4F89F4)),
+                              decoration: TextDecoration.underline,
+                              decorationColor: Color(0xff4F89F4)),
+                        ),
                       ),
                     ],
                   ),
@@ -274,15 +288,20 @@ class HomeScreenss extends StatelessWidget {
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black))),
-                      Text(
-                        'See All',
-                        style: GoogleFonts.inter(
-                            textStyle: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff4F89F4)),
-                            decoration: TextDecoration.underline,
-                            decorationColor: Color(0xff4F89F4)),
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => NearbyHospitalsScreen());
+                        },
+                        child: Text(
+                          'See All',
+                          style: GoogleFonts.inter(
+                              textStyle: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff4F89F4)),
+                              decoration: TextDecoration.underline,
+                              decorationColor: Color(0xff4F89F4)),
+                        ),
                       ),
                     ],
                   ),

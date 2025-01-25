@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../view/confirmation.dart';
 import '../widgets/custom_row.dart';
 import 'profile_screen.dart';
 
@@ -267,7 +268,7 @@ class _AppointmentBookingState extends State<AppointmentBooking> {
                           Center(
                             child: ElevatedButton(
                               onPressed: () {
-                                Get.to(() => ProfileScreen());
+                                Get.to(() => Confirmation());
 
                                 print('User selected rating: $_selectedRating');
                               },

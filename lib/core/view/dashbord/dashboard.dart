@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../view/my_bookings.dart';
 import '../../constant/util.dart';
 import '../home_screen/home_screen.dart';
 import '../profile_screen/profile_screen.dart';
@@ -14,6 +15,8 @@ class _CustomDashboardState extends State<CustomDashboard> {
 
   final List<Widget> _pages = [
     HomeScreenss(),
+    MyBookings(),
+    MyBookings(),
     SettingPage(),
   ];
 
@@ -72,7 +75,7 @@ class _CustomDashboardState extends State<CustomDashboard> {
               ),
             ),
             GestureDetector(
-              onTap: () => _onItemTapped(1),
+              onTap: () => _onItemTapped(2),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -91,7 +94,7 @@ class _CustomDashboardState extends State<CustomDashboard> {
               ),
             ),
             GestureDetector(
-              onTap: () => _onItemTapped(1),
+              onTap: () => _onItemTapped(3),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/view/clinic_specialists.dart';
 import 'core/view/get_direction.dart';
 import 'view/confirmation_alert.dart';
+import 'view/locate_near_by_doctors.dart';
 import 'view/notification_screen.dart';
 import 'view/payment_screen.dart';
 import 'view/splash_screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: NotificationScreen(),
+      child: SplashScreen(),
 
       //  CustomDashboard(),
     );
