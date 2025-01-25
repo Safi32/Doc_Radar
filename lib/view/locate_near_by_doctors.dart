@@ -1,66 +1,12 @@
-// import 'package:doc_radar/view/enter_your_location.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-
-// class LocateNearByDoctors extends StatelessWidget {
-//   const LocateNearByDoctors({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         resizeToAvoidBottomInset: false,
-//         appBar: AppBar(
-//           leading: GestureDetector(
-//             onTap: () {
-//               Navigator.pop(context);
-//             },
-//             child: const Icon(
-//               Icons.arrow_back_ios,
-//               color: Colors.black,
-//             ),
-//           ),
-//           title: GestureDetector(
-//             onTap: () {
-//               Get.to(
-//                 () => const EnterYourLocation(),
-//               );
-//             },
-//             child: const Text(
-//               "Locate Your Nearby Doctors",
-//               style: TextStyle(
-//                 fontWeight: FontWeight.bold,
-//                 fontSize: 25,
-//               ),
-//             ),
-//           ),
-//         ),
-//         body: Column(
-//           children: [
-//             Expanded(
-//               child: SizedBox(
-//                 width: MediaQuery.of(context).size.width,
-//                 child: Image.asset(
-//                   "assets/maps.png",
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:doc_radar/utils/colors.dart';
 import 'package:doc_radar/view/enter_your_location.dart';
+import 'package:doc_radar/view/search_location.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LocateNearByDoctors extends StatelessWidget {
   const LocateNearByDoctors({super.key});
 
-  // Function to show the draggable bottom sheet
   void _showDraggableBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -133,9 +79,9 @@ class AddressConfirmationSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
+          const Row(
             children: [
-              const Text(
+              Text(
                 "Confirm your address",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -145,10 +91,10 @@ class AddressConfirmationSheet extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
-          Divider(
+          const Divider(
             thickness: 1.0,
           ),
-          Row(
+          const Row(
             children: [
               Image(
                 image: AssetImage(
@@ -172,7 +118,7 @@ class AddressConfirmationSheet extends StatelessWidget {
                 style:
                     ElevatedButton.styleFrom(backgroundColor: AppColors.blue),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Get.to(() => const SearchLocation());
                 },
                 child: const Text(
                   "Confirm Location",
@@ -185,7 +131,9 @@ class AddressConfirmationSheet extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.lightBlue),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Get.to(
+                    () => const EnterYourLocation(),
+                  );
                 },
                 child: const Text(
                   "Change Location",

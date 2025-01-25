@@ -1,63 +1,5 @@
-// import 'package:doc_radar/view/confirmation.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-
-// class SearchLocation extends StatelessWidget {
-//   const SearchLocation({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         resizeToAvoidBottomInset: false,
-//         body: Stack(
-//           children: [
-//             Expanded(
-//               child: SizedBox(
-//                 width: MediaQuery.of(context).size.width,
-//                 child: Image.asset(
-//                   "assets/maps.png",
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.symmetric(
-//                 horizontal: 20,
-//                 vertical: 100,
-//               ),
-//               child: TextFormField(
-//                 decoration: InputDecoration(
-//                   prefixIcon: GestureDetector(
-//                     onTap: () {
-//                       Get.to(() => const Confirmation());
-//                     },
-//                     child: const Icon(
-//                       Icons.search,
-//                     ),
-//                   ),
-//                   hintText: "Avenue",
-//                   hintStyle: const TextStyle(
-//                     color: Colors.grey,
-//                   ),
-//                   fillColor: Colors.white,
-//                   filled: true,
-//                   focusedBorder: OutlineInputBorder(
-//                     borderRadius: BorderRadius.circular(10),
-//                   ),
-//                   enabledBorder: OutlineInputBorder(
-//                     borderRadius: BorderRadius.circular(10),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:doc_radar/view/confirmation.dart';
+import 'package:doc_radar/widgets/doctor_detail_dragsheet.dart';
 import 'package:doc_radar/widgets/doctor_pop_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -65,7 +7,6 @@ import 'package:get/get.dart';
 class SearchLocation extends StatelessWidget {
   const SearchLocation({super.key});
 
-  // Function to show the draggable bottom sheet
   void _showDraggableBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -78,7 +19,6 @@ class SearchLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Show the bottom sheet when the screen is first loaded
     Future.delayed(Duration.zero, () => _showDraggableBottomSheet(context));
 
     return SafeArea(
@@ -142,11 +82,15 @@ class PreferencesBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Row(
+          Row(
             children: [
-              Icon(Icons.arrow_back_ios, size: 30),
-              SizedBox(width: 10),
-              Text(
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Icon(Icons.arrow_back_ios, size: 30)),
+              const SizedBox(width: 10),
+              const Text(
                 "Share your preferences",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -157,7 +101,9 @@ class PreferencesBottomSheet extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           DoctorPopUp(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => const DoctorDetailDragsheet());
+            },
           ),
           DoctorPopUp(
             onPressed: () {},

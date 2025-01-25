@@ -1,5 +1,4 @@
 import 'package:doc_radar/utils/colors.dart';
-import 'package:doc_radar/view/search_location.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,11 +38,16 @@ class EnterYourLocation extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const Row(
+                    Row(
                       children: [
-                        Icon(
-                          Icons.arrow_back_ios_new_sharp,
-                          color: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios_new_sharp,
+                            color: Colors.white,
+                          ),
                         ),
                         Expanded(
                           child: Center(
@@ -182,9 +186,7 @@ class EnterYourLocation extends StatelessWidget {
                       height: 40,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        Get.to(() => const SearchLocation());
-                      },
+                      onPressed: () {},
                       child: const Text(
                         "Confirm Location",
                         style: TextStyle(
